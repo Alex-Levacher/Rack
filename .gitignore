@@ -17,5 +17,5 @@ package-lock.json
 # Optional eslint cache
 .eslintcache
 
-# Core commiter folders
+# Core commiter files
 Labo
