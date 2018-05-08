@@ -1,0 +1,39 @@
+{
+    "name": "rack",
+    "version": "0.0.1",
+    "description": "",
+    "main": "src/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Alex-Levacher/Rack.git"
+    },
+    "author": "Alexandre Levacher",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Alex-Levacher/Rack/issues"
+    },
+    "homepage": "https://github.com/Alex-Levacher/Rack#readme",
+    "devDependencies": {
+        "ava": "^0.25.0",
+        "eslint": "^4.19.1",
+        "eslint-config-airbnb": "^16.1.0",
+        "eslint-plugin-import": "^2.11.0",
+        "eslint-plugin-jsx-a11y": "^6.0.3",
+        "eslint-plugin-react": "^7.7.0",
+        "nyc": "^11.7.1",
+        "sinon": "^5.0.4"
+    },
+    "ava": {
+        "files": [
+            "test/**/*.spec.js"
+        ],
+        "source": [
+            "src/**/*.js"
+        ],
+        "verbose": true,
+        "concurrency": 1
+    }
+}
