@@ -2,9 +2,9 @@
     "name": "rack",
     "version": "0.0.1",
     "description": "",
-    "main": "src/index.js",
+    "main": "src/main.js",
     "scripts": {
-        "start": "node src/index.js"
+        "start": "node src/main.js"
     },
     "repository": {
         "type": "git",
