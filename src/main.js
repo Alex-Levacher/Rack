@@ -27,4 +27,5 @@ function main() {
     .then(ans => answers.extend(ans))
     .then(ans => options[ans.command](answers, config));
 }
+
 main();

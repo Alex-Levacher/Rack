@@ -1,5 +1,3 @@
-/* eslint no-console: 0 */
-
 const Inquirer = require('inquirer');
 const moment = require('moment');
 const path = require('path');
@@ -19,7 +17,7 @@ const askHostname = hostNames => wrapper(Inquirer.prompt({
 const askDatabases = databases => wrapper(Inquirer.prompt({
     type: 'list',
     name: 'bdd',
-    message: 'Which BDD?',
+    message: 'Which Database?',
     choices: databases
 }));
 
@@ -40,25 +38,27 @@ const wrapper = prom => new Promise((rs, rj) => {
 module.exports = (answers, config) => {
     const hostNames = Object.entries(config.hosts).map(([key]) => key);
     const date = moment().format('DDMM-HHmm');
+
     sAnwsers = answers;
 
     askHostname(hostNames)
     .then(ans => askDatabases(config.hosts[ans.hostname].databases))
-    .then(ans => askFilename(`BETA-${date}--${ans.bdd}.${config.hosts[ans.hostname].fileName}`))
+    .then(ans => askFilename(`${date}--${ans.bdd}.${config.hosts[ans.hostname].fileName}`))
     .then((ans) => {
         const spinner = ora(`Processing ${COMMAND} ...`).start();
         const dumpPath = path.resolve(config.path, ans.file);
         const { password, username, url } = config.hosts[ans.hostname];
         const command = `${COMMAND} -h ${url} -u ${username} -p ${password} -d ${ans.bdd} --gzip --out ${dumpPath}`;
 
-        shell.exec(command, { silent: true }, (code, stdout, stderr) => {
+        const mongodumpCb = (code, stdout, stderr) => {
             if (code !== 0) {
                 spinner.fail(`Error during ${ans.command}`);
-                console.error(stderr);
-            } else {
-                spinner.succeed(`${ans.command} done`);
+                return console.error(stderr);
             }
-        });
+            return spinner.succeed(`${ans.command} finished`);
+        };
+
+        shell.exec(command, { silent: true }, mongodumpCb);
     })
     .catch(err => console.log(`❌ Error : ${err.message || err}`));
 };

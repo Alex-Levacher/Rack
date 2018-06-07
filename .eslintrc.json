@@ -4,12 +4,13 @@
         "import"
     ],
     "rules": {
+        "no-console": 0,
         "comma-dangle": ["error", {
             "arrays": "never",
-            "objects": "never",
-            "imports": "always",
             "exports": "always",
-            "functions": "ignore"
+            "functions": "ignore",
+            "imports": "always",
+            "objects": "never"
         }],
         "consistent-return": "error",
         "func-names": ["error", "never"],
