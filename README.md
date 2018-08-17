@@ -1,15 +1,19 @@
+<!--
 [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=social)](http://bit.ly/Share-Lumie-twitter)
+-->
 
 ![Rack Logo](./images/Rack.png)
 
 ## 🤔 DESCRIPTION
 
-Rack is a tool to help you to manage databases of your projects with ease.
+Rack is a tool to help you to manage mongoDB databases with ease.
 
 ✅ Import / Export
-✅ AWS S3 support
-✅ Setup CRON
-✅ Manage BDDs in multiples environment. ( Ex: Clone your production data to your staging or development environment )
+✅ Manage BDDs of multiples environments. ( see usecases )
+✅ AWS S3 support *( soon )*
+✅ Setup CRON *( soon )*
+
+![Rack DEMO](./images/Rack01.gif)
 
 ## 💾 INSTALLATION
 
@@ -26,9 +30,9 @@ rack
 
 ``` json
 {
-    "path": "./backup",
+    "backup-path": "./backup",
     "hosts": {
-        "localhost": {
+        "development": {
             "url": "localhost:27018",
             "fileExtention": "dev",
             "username": "",
@@ -36,14 +40,14 @@ rack
             "databases": ["bdd1", "bdd2"]
         },
         "staging": {
-            "url": "111.11.11.11:27018",
+            "url": "...:27018",
             "fileExtention": "sta",
             "username": "",
             "password": "",
             "databases":  ["bdd1"]
         },
         "production": {
-            "url": "111.11.11.11:27018",
+            "url": "...:27018",
             "fileExtention": "prod",
             "username": "",
             "password": "",
@@ -57,6 +61,18 @@ rack
 
 Here are the next features planned, let me know if you have some ideas
 
-* Docker support
+* Setup CRONs
+* AWS S3 support
 
-🚧 Work in progress
+
+## ☕️ SUPPORT
+You can support the project by
+* Star our GitHub repo ⭐️
+* [Suggest ideas](https://github.com/Alex-Levacher/Rack/issues) to help me improve Rack 🌎
+
+If you are struggling to setup Rack, you found a bug or if you have some improvement ideas, feel free to [create an issue](https://github.com/Alex-Levacher/Lumie/issues)<br><br>
+<a href="https://www.buymeacoffee.com/AlexLevacher" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/black_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+
+## ⚖️ LICENSE
+
+This software is licensed under the MIT © [Alex Levacher](mailto:levacher.alex@gmail.com)
