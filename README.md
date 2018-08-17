@@ -8,12 +8,14 @@
 
 Rack is a tool to help you to manage mongoDB databases with ease.
 
-✅ Import / Export
-✅ Manage BDDs of multiples environments. ( see usecases )
-✅ AWS S3 support *( soon )*
-✅ Setup CRON *( soon )*
+✅ Import / Export <br>
+✅ Manage BDDs of multiples environments. ( see usecases )<br>
+✅ AWS S3 support *( soon )*<br>
+✅ Setup CRON *( soon )*<br>
 
-![Rack DEMO](./images/Rack01.gif)
+<p align="center">
+  <img src="./images/Rack01.gif">
+</p>
 
 ## 💾 INSTALLATION
 
